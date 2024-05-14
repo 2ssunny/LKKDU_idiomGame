@@ -7,10 +7,10 @@ meaning_set=["둔한말이 열수레를 끈다.", "어리석은 사람이 산을
               "물방울이 떨어져 바위에 구멍을 뚫는다.", "눈을 비비고 다시 본다.",
               "자기를 버리고 타인의 행위를 따라하면 두가지를 모두 놓친다.", "반딧불과 눈과 함께하는 노력."] #각 사자성어별 뜻
 
-correct_times=0 #정답횟수
-false_times=0 #오답횟수
 usedNo_list=[] #이미 출제된 문제 번호 저장
 
+correct_times=0 #정답횟수
+false_times=0 #오답횟수
 correct_items=[] #맞춘 문제 번호 저장
 false_items=[] #틀린 문제 번호 저장
 
@@ -27,15 +27,15 @@ while len(usedNo_list)<len(question_set): #사용된 숫자 리스트 크기가 
   else: #섞은 후와 원래 문자열이 동일하지 않은 경우=제대로 섞인 경우: 계속해서 진행
     try:
       usedNo_list.index(indexNo)==False #사용된 숫자 리스트에서 선정된 숫자 있는지 체크
-      
-    except(ValueError): #없는 경유 ValueError가 발생하기에, 정상적인 sequnce로 간주하고 진행
+    
+    except(ValueError): #없는 경우 ValueError가 발생하기에, 정상적인 sequnce로 간주하고 진행
       print(len(usedNo_list)+1,"번째 문제")
       print("사자성어의 의미:\n", meaning_set[indexNo])
       print(shuffled_idiom) #문제 출력
 
       answer=str(input("정답을 입력해 주세요: ")) #정답 입력받기
       usedNo_list.append(indexNo) #정답 입력 받은 후 사용된 번호 리스트에 문제 번호 추가
-      
+    
       if answer==question_set[indexNo]: #정답이 맞을 경우
         correct_times=correct_times+1
         correct_items.append(question_set[indexNo]) #정답 횟수를 1 늘리고, 문제 번호 저장
@@ -43,8 +43,8 @@ while len(usedNo_list)<len(question_set): #사용된 숫자 리스트 크기가 
         false_times=false_times+1
         false_items.append(question_set[indexNo]) #오답 횟수 1 늘리고, 문제 번호 저장
 
-
 print("게임이 종료되었습니다.")
 print("맞춘 횟수: ",correct_times,"틀린 횟수: ", false_times)
 print("맞춘 문제: ", correct_items)
 print("틀린 문제: ",false_items) #종료 이후 통계 표시
+print("\n Developed in 2024 by Juho \"Andrew\" Lee, all rights reserved.")
