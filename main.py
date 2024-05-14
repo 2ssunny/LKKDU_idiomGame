@@ -30,7 +30,7 @@ while len(usedNo_list)<len(question_set): #사용된 숫자 리스트 크기가 
       usedNo_list.index(indexNo)==False #사용된 숫자 리스트에서 선정된 숫자 있는지 체크
     
     except(ValueError): #없는 경우 ValueError가 발생하기에, 정상적인 sequnce로 간주하고 진행
-      print(len(usedNo_list)+1,"번째 문제")
+      print("\n",len(usedNo_list)+1,"번째 문제")
       print("사자성어의 의미:\n", meaning_set[indexNo])
       print(shuffled_idiom) #문제 출력
 
@@ -44,8 +44,7 @@ while len(usedNo_list)<len(question_set): #사용된 숫자 리스트 크기가 
         false_times=false_times+1
         false_items.append(question_set[indexNo]) #오답 횟수 1 늘리고, 문제 번호 저장
 
-print("게임이 종료되었습니다.")
-print("맞춘 횟수: ",correct_times,"틀린 횟수: ", false_times)
-print("맞춘 문제: ", correct_items)
-print("틀린 문제: ",false_items) #종료 이후 통계 표시
-print("\n Developed in 2024 by Juho \"Andrew\" Lee, all rights reserved.")
+print("게임이 종료되었습니다.\n")
+print("맞춘 횟수:",correct_times,", 틀린 횟수:", false_times)
+print("\n맞춘 문제: \n", correct_items)
+print("\n틀린 문제:\n",false_items) #종료 이후 통계 표시
